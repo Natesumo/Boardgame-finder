@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="d-flex justify-content-center display-4 p-3">Most Popular</h1>
+<div class="d-flex justify-content-around row col-md ">
+    {% for game in gamedata %}
+    <div class="card text-center border-primary rounded m-2" style="width: 18rem;">
+        <img type="button" data-toggle="modal" data-target="#ModalCenter{{forloop.counter}}" href="#" class="card-img-top p-1" src="{{ game.images.medium }}" alt="Card image cap" height="300">
+        <div class="card-body">
+        <h4 class="card-title">#{{ forloop.counter }}</h4>
+        <h5 class="card-subtitle mb-2">{{ game.name }}</h5>
+        <a type="button" data-toggle="modal" data-target="#ModalCenter{{forloop.counter}}" href="#" class="card-link text-primary lead">More Details</a>
+        </div>
+        <div class="modal fade" id="ModalCenter{{forloop.counter}}" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="ModalLongTitle"><h1>{{ game.name }}</h1></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <h2>Players: {{ game.min_players }} - {{ game.max_players }}</h2>
+                    <h2>Playtime: {{ game.min_playtime }} - {{ game.max_playtime }} minutes</h2>
+                    <h3>Year Published: {{ game.year_published }}</h3>
+                    <h3>Price: ${{ game.price }}</h3>
+                    <p class="lead"><strong>Description:</strong> {{ game.description|safe }}</p>
+                    <h3><a href="{{ game.url }}" target="_blank">Visit the Store Page</a></h6>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div> 
+    {% endfor %}
+</div>
+{% endblock content %}
