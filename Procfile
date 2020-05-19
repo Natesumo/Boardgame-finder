@@ -1,1 +1,1 @@
-web: gunicorn Boardgame-finder.wsgi
+web: gunicorn boardgame.wsgi
