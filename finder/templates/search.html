@@ -15,7 +15,7 @@
   {% if gamedata %}
     {% for game in gamedata %}
     <div class="card text-center border-primary rounded m-2" style="width: 18rem;">
-        <img class="card-img-top p-1" src="{{ game.images.medium }}" alt="Card image cap" height="300">
+      <img type="button" data-toggle="modal" data-target="#ModalCenter{{forloop.counter}}" href="#" class="card-img-top p-1" src="{{ game.images.medium }}" alt="Card image cap" height="300">
         <div class="card-body">
         <h4 class="card-title">{{ game.name }}</h4>
         <h5 class="card-subtitle mb-2">Players: {{ game.min_players }} - {{ game.max_players }}</h5>
