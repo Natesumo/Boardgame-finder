@@ -1,4 +1,11 @@
 # Board-game-finder
-Made with Python Django. Project is hosted here: https://boardgame-finder.herokuapp.com/
+Made by Nate Ott with Python Django. Project is hosted here: https://boardgame-finder.herokuapp.com/
 
-# Details
+# Technologies used
+- Pyhon
+- Django
+- HTML
+- CSS
+- Flexbox
+- Bootstrap
+- Board Game Atlas API
